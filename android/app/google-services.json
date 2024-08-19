@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "455529902270",
+    "project_id": "fir-cad-2021b",
+    "storage_bucket": "fir-cad-2021b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455529902270:android:f2cb2369d506168d8feeef",
+        "android_client_info": {
+          "package_name": "com.example.firebase_getx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8Oa3onx0a7L6i0x7gxqRY7Ea2lQaqg3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
