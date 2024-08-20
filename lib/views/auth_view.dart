@@ -1,20 +1,19 @@
+import 'package:cadastro_firebase_getx/controllers/user_controller.dart';
+import 'package:cadastro_firebase_getx/views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'user_controller.dart';
 import 'main_view.dart';
 
-class RegisterView extends StatelessWidget {
+class AuthView extends StatelessWidget {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final nameController = TextEditingController();
-  final addressController = TextEditingController();
   final UserController userController = Get.find<UserController>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Registrar'),
+        title: Text('Login'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -31,32 +30,26 @@ class RegisterView extends StatelessWidget {
               decoration: InputDecoration(labelText: 'Senha'),
               obscureText: true,
             ),
-            TextField(
-              controller: nameController,
-              decoration: InputDecoration(labelText: 'Nome'),
-            ),
-            TextField(
-              controller: addressController,
-              decoration: InputDecoration(labelText: 'Endereço'),
-            ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () async {
                 try {
-                  await userController.register(
-                    emailController.text,
-                    passwordController.text,
-                    nameController.text,
-                    addressController.text,
-                  );
+                  await userController.login(
+                      emailController.text, passwordController.text);
                   Get.off(
-                      MainView()); // Redireciona para a tela principal após o registro
+                      MainView()); // Redireciona para a tela principal após o login
                 } catch (e) {
                   Get.snackbar('Erro', e.toString(),
                       snackPosition: SnackPosition.BOTTOM);
                 }
               },
-              child: Text('Registrar'),
+              child: Text('Login'),
+            ),
+            TextButton(
+              onPressed: () {
+                Get.to(RegisterView()); // Redireciona para a tela de registro
+              },
+              child: Text('Não tem uma conta? Registre-se'),
             ),
           ],
         ),

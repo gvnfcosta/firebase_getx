@@ -1,8 +1,8 @@
+import 'package:cadastro_firebase_getx/controllers/user_controller.dart';
+import 'package:cadastro_firebase_getx/views/auth_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'auth_view.dart';
-import 'user_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
